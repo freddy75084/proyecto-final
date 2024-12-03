@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimiento e Innovación en Colombia</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            /* Hace que el body ocupe toda la altura de la ventana */
+        }
+
+        /* Contenedor principal que agrupa el menú y el contenido */
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Barra lateral - Menú */
+         #sidebar {
+            width: 250px;
+            background-color: #28a745;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto; /* Habilita el desplazamiento vertical */
+            padding-top: 20px;
+            transition: all 0.3s ease; /* Transición suave */
+        }
+
+        #sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        #sidebar a:hover {
+            background-color: #45c49f;
+        }
+
+        /* Contenido principal */
+        .content {
+            margin-left: 250px;
+            /* Deja espacio para el menú */
+            width: calc(100% - 250px);
+            /* El contenido ocupa el resto del espacio */
+            padding: 20px;
+            overflow: auto;
+            background-color: #f4f4f9;
+            transition: margin-left 0.3s ease;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilo de las cartas */
+        .card {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra lateral - Menú -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        <!-- Contenido principal -->
+        <div class="content">
+            <header>
+                <h1>Emprendimiento e Innovación en Colombia</h1>
+                <p>Descubre oportunidades, apoyos y recursos para emprender e innovar en Colombia</p>
+            </header>
+
+            <!-- Sección de introducción -->
+            <section class="container">
+                <h2>¿Qué es el emprendimiento y la innovación?</h2>
+                <p>El emprendimiento es el proceso de identificar oportunidades de negocio y crear nuevas soluciones que
+                    contribuyan al desarrollo económico y social. La innovación, por su parte, se refiere a la creación
+                    de nuevas ideas, productos o servicios que aportan valor y mejoran la calidad de vida de las
+                    personas.</p>
+                <p>En Colombia, la innovación y el emprendimiento están creciendo rápidamente, con numerosos apoyos y
+                    redes de organizaciones dedicadas a facilitar el proceso a los emprendedores y pequeñas empresas.
+                </p>
+            </section>
+
+            <!-- Sección de organizaciones que apoyan el emprendimiento -->
+            <section class="container">
+                <h2>Redes y organizaciones que apoyan el emprendimiento</h2>
+                <p>Existen diversas organizaciones que brindan apoyo a los emprendedores en Colombia, desde incubadoras
+                    de empresas hasta fondos de inversión y programas de capacitación. A continuación, te presentamos
+                    algunas de las principales:</p>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Innpulsa Colombia</h5>
+                                <p class="card-text">Innpulsa es el programa del gobierno colombiano que fomenta la
+                                    innovación y el emprendimiento. Ofrecen apoyo financiero, formación y conexión con
+                                    redes de inversionistas.</p>
+                                <a href="https://www.innpulsacolombia.com" class="btn btn-primary"
+                                    target="_blank">Visitar sitio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">SENA Emprende</h5>
+                                <p class="card-text">El SENA ofrece capacitación, asesoría y recursos a los
+                                    emprendedores colombianos. Su plataforma SENA Emprende está diseñada para acompañar
+                                    a los emprendedores desde la idea hasta la ejecución.</p>
+                                <a href="https://www.sena.edu.co" class="btn btn-primary" target="_blank">Visitar
+                                    sitio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Accelerate Colombia</h5>
+                                <p class="card-text">Una red de inversionistas y mentores enfocados en el apoyo a
+                                    startups en etapas tempranas. Conectan emprendedores con oportunidades de
+                                    financiamiento y expansión.</p>
+                                <a href="https://www.acceleratecolombia.com" class="btn btn-primary"
+                                    target="_blank">Visitar sitio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de noticias y enlaces de interés -->
+            <section class="container">
+                <h2>Noticias y enlaces de interés</h2>
+                <p>A continuación, te compartimos algunos recursos y noticias actuales sobre el emprendimiento e
+                    innovación en Colombia:</p>
+
+                <ul>
+                    <li><a href="https://www.elespectador.com/tecnologia/emprendimiento/" target="_blank">Noticias sobre
+                            emprendimiento en El Espectador</a></li>
+                    <li><a href="https://www.laurafernandez.com.co/blog" target="_blank">Blog de innovación de Laura
+                            Fernández</a></li>
+                    <li><a href="https://www.cede.org.co" target="_blank">Centro de Estudios en Desarrollo Económico
+                            (CEDE) - Universidad de los Andes</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Emprendimiento e Innovación en Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace a Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agradecimientos</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Barra lateral - Menú */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #aaa70b;
+            color: white;
+            padding-top: 20px;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        #sidebar a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        #sidebar a:hover {
+            background-color: #28a745;
+        }
+
+        /* Contenedor principal */
+        .content {
+            margin-left: 270px; /* Espacio para el menú */
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .logos img {
+            width: 150px;
+            margin: 10px;
+        }
+
+        .logos {
+            text-align: center;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral - Menú -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="content">
+        <!-- Encabezado -->
+        <header>
+            <h1>Agradecimientos</h1>
+        </header>
+
+        <!-- Contenido de Agradecimientos -->
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Queremos expresar nuestro más profundo agradecimiento</h3>
+                    <p>
+                        Al Ministerio de Tecnologías de la Información y las Comunicaciones (MINTIC) con su Programa <strong>TALENTO TECH2</strong> y a la Universidad de Caldas, con la recién creada Facultad de Inteligencia Artificial. A ellos, por haber liderado y apoyado este importante proyecto educativo. Esto en colaboración con la Universidad de Antioquia, la Corporación Universitaria Remington y la empresa <strong>SUSUERTE</strong>, quienes nos brindaron la oportunidad de participar en el Curso Nivel de Explorador.
+                    </p>
+                    <p>
+                        Agradecemos especialmente la dedicación y guía de los Mentores <strong>Carlos García</strong>, <strong>Santiago Bustos</strong> y <strong>Natalia Quevedo</strong>, quienes con su experiencia y compromiso nos han ayudado a alcanzar nuestros objetivos. También extendemos un reconocimiento al Monitor <strong>Brahian Ospina</strong>, por su apoyo constante y valiosa asistencia durante todo el proceso.
+                    </p>
+                    <p>
+                        Este proyecto no habría sido posible sin la colaboración y esfuerzo conjunto de todos ustedes. ¡Gracias por inspirarnos a seguir adelante en este camino de emprendimiento e innovación!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logotipos de instituciones aliadas -->
+        <div class="container logos">
+            <h3>Instituciones Aliadas</h3>
+            <div class="d-flex justify-content-center">
+                <img src="imagenes/LogoMinisterioTIC.jpg" alt="Ministerio TIC" />
+                <img src="imagenes/LogoUniCaldas.jpg" alt="Universidad de Caldas" />
+                <img src="imagenes/LogoUniAntioquia.jpg" alt="Universidad de Antioquia" />
+                <img src="imagenes/LogoUniRemington.jpg" alt="Corporación Universitaria Remington" />
+                <img src="imagenes/LogoSUSUERTE.jpg" alt="SUSUERTE" />
+            </div>
+        </div>
+
+        <!-- Información de contacto -->
+        <div class="container contact-info">
+            <h5>Contacto</h5>
+            <p>📞 TELÉFONO: +57 123 456 7890</p>
+            <p>✉️ EMAIL: contacto@emprendimiento.com</p>
+            <p>📍 DIRECCIÓN: Calle Ejemplo #123, Ciudad</p>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Emprendimiento e Innovación. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaces a Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

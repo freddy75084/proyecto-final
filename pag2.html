@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Emprendimiento e Innovación en Colombia</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a DataTables CSS para tablas interactivas -->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+
+          /* Barra lateral - Menú */
+        #sidebar {
+            width: 250px;
+            background-color: #28a745;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto; /* Habilita el desplazamiento vertical */
+            padding-top: 20px;
+            transition: all 0.3s ease; /* Transición suave */
+        }
+
+        #sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        #sidebar a:hover {
+            background-color: #45c49f;
+        }
+
+
+        /* Estilo para el contenido principal */
+        .main-content {
+            margin-left: 250px;
+            /* Deja espacio para el sidebar */
+            padding: 20px;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra lateral - Menú -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Encabezado -->
+        <header>
+            <h1>Dashboard de Emprendimiento e Innovación en Colombia</h1>
+            <p>Visualiza y filtra los datos históricos del emprendimiento y la innovación en Colombia</p>
+        </header>
+
+        <!-- Filtro de tiempo -->
+        <div class="container">
+            <h2>Filtrar Datos Históricos</h2>
+            <form id="filters-form" class="mb-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="year-filter">Año</label>
+                        <input type="number" id="year-filter" class="form-control" placeholder="Año (ej. 2020)"
+                            min="2000" max="2024">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="activity-filter">Tipo de Actividad</label>
+                        <select id="activity-filter" class="form-control">
+                            <option value="">Seleccione</option>
+                            <option value="emprendimiento">Emprendimiento</option>
+                            <option value="innovacion">Innovación</option>
+                            <option value="negocio">Negocio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="business-type-filter">Tipo de Negocio</label>
+                        <select id="business-type-filter" class="form-control">
+                            <option value="">Seleccione</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="agroindustria">Agroindustria</option>
+                            <option value="servicios">Servicios</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary mt-3" onclick="applyFilters()">Aplicar Filtros</button>
+            </form>
+
+            <!-- Tabla de Datos -->
+            <div class="card">
+                <div class="card-body">
+                    <h3>Datos Históricos de Emprendimiento e Innovación</h3>
+                    <table id="data-table" class="display table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Tipo de Actividad</th>
+                                <th>Tipo de Negocio</th>
+                                <th>Valor Invertido</th>
+                                <th>Cantidad de Proyectos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se llenarán mediante JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Emprendimiento e Innovación en Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaces a jQuery, DataTables y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Datos históricos simulados (en un caso real, estos datos vendrían de una fuente externa, como una API o archivo CSV)
+        const data = [
+            { year: 2020, activity: "Emprendimiento", business_type: "Tecnología", investment: "$5,000,000", projects: 15 },
+            { year: 2021, activity: "Innovación", business_type: "Agroindustria", investment: "$3,500,000", projects: 8 },
+            { year: 2022, activity: "Negocio", business_type: "Servicios", investment: "$2,000,000", projects: 5 },
+            { year: 2021, activity: "Emprendimiento", business_type: "Tecnología", investment: "$7,000,000", projects: 20 },
+            { year: 2023, activity: "Innovación", business_type: "Servicios", investment: "$4,000,000", projects: 10 },
+            { year: 2023, activity: "Negocio", business_type: "Tecnología", investment: "$6,500,000", projects: 18 },
+            { year: 2020, activity: "Innovación", business_type: "Agroindustria", investment: "$2,500,000", projects: 6 },
+            // Agrega más datos según sea necesario...
+        ];
+
+        // Función para llenar la tabla con los datos
+        function fillTable(filteredData) {
+            const tableBody = document.querySelector("#data-table tbody");
+            tableBody.innerHTML = ""; // Limpiar la tabla
+
+            filteredData.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${row.year}</td>
+                    <td>${row.activity}</td>
+                    <td>${row.business_type}</td>
+                    <td>${row.investment}</td>
+                    <td>${row.projects}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            // Inicializar DataTables para la tabla
+            $('#data-table').DataTable();
+        }
+
+        // Función para aplicar los filtros
+        function applyFilters() {
+            const yearFilter = document.getElementById("year-filter").value;
+            const activityFilter = document.getElementById("activity-filter").value;
+            const businessTypeFilter = document.getElementById("business-type-filter").value;
+
+            // Filtrar los datos
+            const filteredData = data.filter(item => {
+                const matchesYear = yearFilter ? item.year == yearFilter : true;
+                const matchesActivity = activityFilter ? item.activity.toLowerCase().includes(activityFilter.toLowerCase()) : true;
+                const matchesBusinessType = businessTypeFilter ? item.business_type.toLowerCase().includes(businessTypeFilter.toLowerCase()) : true;
+
+                return matchesYear && matchesActivity && matchesBusinessType;
+    

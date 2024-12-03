@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participación de Tipos de Emprendimiento en Colombia</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+        footer {
+            background-color: #5316e2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            margin-top: 30px;
+            flex: 1;
+        }
+        .card {
+            margin-top: 20px;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        /* Barra lateral (menú) */
+        #sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #0c89af;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto; /* Permite desplazarse verticalmente */
+            padding-left: 10px;
+        }
+        #sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        #sidebar a:hover {
+            background-color: #575757;
+        }
+        /* Estilo del contenido principal */
+        .main-content {
+            margin-left: 220px; /* Deja espacio para el menú */
+            width: calc(100% - 220px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral (menú) -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Encabezado -->
+        <header>
+            <h1>Participación de Tipos de Emprendimiento en Colombia</h1>
+            <p>Gráfico de torta que muestra la distribución de los tipos de emprendimiento en Colombia.</p>
+        </header>
+
+        <!-- Contenedor del gráfico -->
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Distribución de Tipos de Emprendimiento</h3>
+                    <div class="chart-container">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2024 Participación de Emprendimiento en Colombia. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Enlaces a Chart.js y Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Datos sobre la participación de emprendimientos en Colombia (estos son datos de ejemplo)
+        const data = {
+            labels: ['Antojitos', 'Emprendimiento Social', 'Datos Abiertos'],
+            datasets: [{
+                label: 'Participación de Emprendimiento (%)',
+                data: [50, 30, 20], // Valores representativos de la participación en cada tipo de emprendimiento
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 205, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 205, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Configuración del gráfico de torta
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Crear el gráfico de torta
+        const pieChart = new Chart(
+            document.getElementById('pieChart'),
+            config
+        );
+    </script>
+
+</body>
+</html>

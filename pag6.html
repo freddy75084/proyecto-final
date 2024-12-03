@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendencia de la Innovación en el Mundo</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        /* Barra lateral (menú) */
+        #sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #16eb39;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto; /* Permite desplazarse verticalmente */
+            padding-left: 10px;
+        }
+        #sidebar a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        #sidebar a:hover {
+            background-color: #575757;
+        }
+        /* Estilo del contenido principal */
+        .main-content {
+            margin-left: 220px; /* Deja espacio para el menú */
+            width: calc(100% - 220px);
+        }
+        /* Estilos del encabezado y pie de página */
+        header {
+            background-color: #17a2b8;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            margin-top: 20px;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral (menú) -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Encabezado -->
+        <header>
+            <h1>Tendencia de la Innovación en el Mundo</h1>
+            <p>Gráfico de líneas mostrando la evolución de la innovación a nivel global.</p>
+        </header>
+
+        <!-- Contenedor del gráfico -->
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Evolución de la Innovación Global</h3>
+                    <div class="chart-container">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Tendencia de Innovación Global. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaces a Chart.js y Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Datos sobre la tendencia de innovación global (ejemplo basado en tendencias de innovación global)
+        const data = {
+            labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+            datasets: [{
+                label: 'Índice Global de Innovación',
+                data: [30, 32, 34, 36, 40, 43, 47, 50, 52, 55, 58, 60], // Valores de ejemplo para el índice de innovación
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 2,
+                fill: false, // No rellenar el área debajo de la línea
+                tension: 0.1 // Suaviza la línea
+            }]
+        };
+
+        // Configuración del gráfico de líneas
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Índice de Innovación'
+                        },
+                        beginAtZero: false
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return 'Innovación: ' + tooltipItem.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Crear el gráfico de líneas
+        const lineChart = new Chart(
+            document.getElementById('lineChart'),
+            config
+        );
+    </script>
+
+</body>
+</html>

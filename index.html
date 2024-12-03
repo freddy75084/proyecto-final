@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos - Emprendimiento e Innovación</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <body>
+   
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+    
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        <!-- Contenido -->
+        <div class="content">
+            <header>
+                <h1>EL PODER DE EMPRENDER</h1>
+                <p>¡Bienvenidos a nuestra comunidad de innovación y emprendimiento!</p>
+            </header>
+    
+            <!-- Introducción -->
+            <div class="intro-section">
+                <h2>¡Transforma tus ideas en realidades!</h2>
+                <p>Aquí encontrarás un espacio donde las ideas se transforman en realidades, y el apoyo a tu proyecto es
+                    nuestra prioridad. Creemos en el poder de la creatividad, el esfuerzo y la colaboración para construir
+                    un futuro lleno de oportunidades.</p>
+                <p>Si tienes una idea, un sueño o un emprendimiento, estamos aquí para apoyarte en cada paso de tu camino.
+                    ¡Emprende, innova y crece con nosotros!</p>
+            </div>
+    
+            <!-- Información sobre el proyecto -->
+            <div class="team-section">
+                <h3>Este es un proyecto realizado por:</h3>
+                <p><strong>Alexander Montes Cardona</strong></p>
+                <p><strong>Freddy Alfonso Berrio</strong></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Emprendimiento e Innovación. Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Enlaces a Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    </body>
+    
+    </html>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Hace que el body ocupe toda la altura de la ventana */
+        }
+
+        /* Contenedor principal que agrupa el menú y el contenido */
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Barra lateral - Menú */
+        #sidebar {
+            width: 250px;
+            background-color: #28a745;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto; /* Habilita el desplazamiento vertical */
+            padding-top: 20px;
+            transition: all 0.3s ease; /* Transición suave */
+        }
+
+        #sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        #sidebar a:hover {
+            background-color: #45c49f;
+        }
+
+        /* Contenido principal */
+        .content {
+            margin-left: 250px; /* Deja espacio para el menú */
+            width: calc(100% - 250px); /* El contenido ocupa el resto del espacio */
+            padding: 20px;
+            overflow: auto;
+            background-color: #f4f4f9;
+            transition: margin-left 0.3s ease;
+        }
+
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-top: 40px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: #28a745;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .team-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .team-section h3 {
+            font-size: 2rem;
+            color: #17a2b8;
+        }
+
+        .team-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+

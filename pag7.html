@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación entre Emprendimiento y Innovación</title>
+    <!-- Enlace a Bootstrap para diseño -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Barra lateral - Menú */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        
+        #sidebar a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        #sidebar a:hover {
+            background-color: #17a2b8;
+        }
+
+        /* Contenedor principal */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #ffc107;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral - Menú -->
+    <div id="sidebar">
+        <a href="index.html">Inicio</a>
+        <a href="pag1.html">Info sobre emprendimiento</a>
+        <a href="pag2.html">Datos Históricos</a>
+        <a href="pag3.html">Formulario</a>
+        <a href="pag4.html">Emprendimiento para La mujer</a>
+        <a href="pag5.html">Tipo de Emprendimiento</a>
+        <a href="pag6.html">Tendencia de la innovación en el mundo</a>
+        <a href="pag7.html">Comparación emprendimiento e innovación</a>
+        <a href="pag8.html">Contactos</a>
+        <a href="pag9.html">Agradecimientos</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="content">
+        <!-- Encabezado -->
+        <header>
+            <h1>Comparación entre el Emprendimiento y la Innovación</h1>
+            <p>Gráfico de área que compara el desarrollo del emprendimiento y la innovación a lo largo del tiempo.</p>
+        </header>
+
+        <!-- Contenedor del gráfico -->
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Desarrollo de Emprendimiento vs Innovación</h3>
+                <div class="chart-container">
+                    <canvas id="areaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Comparación entre Emprendimiento e Innovación. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlaces a Chart.js y Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Datos de ejemplo: emprendimiento y innovación en Colombia (estos datos son ficticios)
+        const data = {
+            labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+            datasets: [
+                {
+                    label: 'Emprendimiento en Colombia',
+                    data: [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105], // Valores hipotéticos de emprendimiento
+                    backgroundColor: 'rgba(255, 99, 132, 0.4)', // Color de fondo del área
+                    borderColor: 'rgba(255, 99, 132, 1)', // Color del borde del área
+                    borderWidth: 1,
+                    fill: true,
+                },
+                {
+                    label: 'Innovación en Colombia',
+                    data: [40, 45, 50, 55, 60, 65, 70, 80, 85, 90, 95, 100], // Valores hipotéticos de innovación
+                    backgroundColor: 'rgba(54, 162, 235, 0.4)', // Color de fondo del área
+                    borderColor: 'rgba(54, 162, 235, 1)', // Color del borde del área
+                    borderWidth: 1,
+                    fill: true,
+                }
+            ]
+        };
+
+        // Configuración del gráfico de área
+        const config = {
+            type: 'line', // Usamos "line" para el gráfico de área
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Índice de Desarrollo'
+                        },
+                        beginAtZero: false
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.dataset.label + ': ' + tooltipItem.raw;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Crear el gráfico de área
+        const areaChart = new Chart(
+            document.getElementById('areaChart'),
+            config
+        );
+    </script>
+
+</body>
+</html>
